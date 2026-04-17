@@ -2,8 +2,8 @@ import React from 'react'
 
 const EmployeeDashboard = () => {
   return (
-    <div>
-      
+    <div classname='p-20  b-[#1C1C1C] h-screen '>
+      <Header />
     </div>
   )
 }
