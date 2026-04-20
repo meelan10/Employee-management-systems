@@ -13,3 +13,7 @@ A simple Employee Management System built using React.js that allows users to ma
 - React.js
 - JavaScript (ES6)
 - CSS / Tailwind CSS
+
+
+## Author
+Milan Wagle
