@@ -7,8 +7,8 @@ const EmployeeDashboard = () => {
   return (
     <div className='p-20 h-full'>
       <Header />
-       <TaskListNumber />
-       <TaskList />
+       {/* <TaskListNumber />
+       <TaskList /> */}
     </div>
   )
 }
