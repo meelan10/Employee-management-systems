@@ -9,17 +9,17 @@ const AdminDashboard = () => {
       <div>
         <form className='flex flex-wrap bg-red-300 w-full items-start justify-between text-white'>
           <div className='w-1/2'> 
-            <div>  <h3>Task Title</h3>
-          <input type='text' placeholder='Make a UI design' />
+            <div>  <h3 className='text-sm text-gray-300 mb-0.5'>Task Title</h3>
+          <input className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] bg-white text-black' type='text' placeholder='Make a UI design' />
           </div> 
-          <div>  <h3>Date</h3>
-          <input type='date' />
+          <div>  <h3 className='text-sm text-gray-300 mb-0.5'>Date</h3>
+          <input className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] text-black bg-white' type='date' />
           </div>
-         <div> <h3>Assign to</h3>
-          <input type='text' placeholder='employee name' />
+         <div> <h3 className='text-sm text-gray-300 mb-0.5 '>Assign to</h3>
+          <input className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] bg-white text-black' type='text' placeholder='employee name' />
           </div>
-         <div>  <h3>Category</h3>
-          <input type='text' placeholder='design, dev, etc' />
+         <div>  <h3 className='text-sm text-gray-300 mb-0.5'>Category</h3>
+          <input className='text-sm py-1 px-2 w-4/5 rounded outline-none border-[1px] text-black bg-white' type='text' placeholder='design, dev, etc' />
           </div>
           </div>
           <div className='w-1/2'>
