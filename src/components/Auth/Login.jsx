@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Login = () => {
+const Login = ({handleLogin}) => {
    
   const [email, setEmail] = useState('')
   const [password, setPassword]= useState('')
@@ -9,8 +9,7 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    console.log("email is", email)
-      console.log("password is", password)
+    handleLogin(email,password)
 
       setEmail("")
         setPassword("")
@@ -38,7 +37,7 @@ const Login = () => {
         onChange ={(e)=>{
           setPassword(e.target.value)
         }}
-         required className='bg-transparent outline-none border-2 border-emerald-600 mt-3 py-4 px-5 text-xl rounded-full placeholder:text-white' type="password" placeholder='Enter password' />
+         required className='bg-transparent outline-none border-2 border-emerald-600 mt-3 py-4 px-5 text-xl text-white rounded-full placeholder:text-white' type="password" placeholder='Enter password' />
         <button  className='text-white mt-5  outline-none border-none bg-emerald-600 py-4 px-5 text-xl rounded-full placeholder:text-white' >Login</button>
       </form>
     </div>
