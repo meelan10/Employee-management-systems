@@ -32,7 +32,7 @@ const Login = () => {
           setEmail(e.target.value)
 
         }} 
-        required className=' bg-transparent outline-none border-2 border-emerald-600 py-4 px-5 text-xl rounded-full placeholder:text-white' type="email" placeholder='Enter your email' />
+        required className=' bg-transparent outline-none border-2 border-emerald-600 py-4 px-5 text-xl rounded-full text-white placeholder:text-white' type="email" placeholder='Enter your email' />
         <input
         value = {password}
         onChange ={(e)=>{
