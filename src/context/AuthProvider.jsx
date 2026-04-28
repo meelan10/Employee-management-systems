@@ -1,14 +1,12 @@
-import React from 'react'
+import React, { createContext } from 'react'
 
 export const AuthContext = createContext()
 
-const AuthProvider = ({Children}) => {
+const AuthProvider = ({ children }) => {
   return (
-    <div>
-      <AuthContext.Provider value={"Milan"}>
-        {Children}
-      </AuthContext.Provider>
-    </div>
+    <AuthContext.Provider value={"Milan"}>
+      {children}
+    </AuthContext.Provider>
   )
 }
 
