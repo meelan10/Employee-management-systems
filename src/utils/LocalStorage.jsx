@@ -188,18 +188,56 @@ const employees = [
 
 const admin = [{
   id: 0,
-  email: "admin@example.com",
-  password: "123"
-}];
+  email: 'admin@example.com',
+  password: '123'
+}]
 
-export const  setLocalStorage=() => {
-  localStorage.setItem('employees',JSON.stringify(employees))
-    localStorage.setItem('admin',JSON.stringify(admin))
+export const setLocalStorage = () => {
+  if (typeof window === 'undefined' || !window.localStorage) return
+  localStorage.setItem('employees', JSON.stringify(employees))
+  localStorage.setItem('admin', JSON.stringify(admin))
 }
 
 export const getLocalStorage = () => {
-  const employees = JSON.parse(localStorage.getItem('employees'))
-  const admin = JSON.parse(localStorage.getItem('admin'))
+  if (typeof window === 'undefined' || !window.localStorage) return { employees: [], admin: [] }
 
-  return { employees, admin }
+  const storedEmployees = localStorage.getItem('employees')
+  const storedAdmin = localStorage.getItem('admin')
+
+  let parsedEmployees = []
+  let parsedAdmin = []
+
+  try {
+    parsedEmployees = storedEmployees ? JSON.parse(storedEmployees) : []
+  } catch (error) {
+    parsedEmployees = []
+  }
+
+  try {
+    parsedAdmin = storedAdmin ? JSON.parse(storedAdmin) : []
+  } catch (error) {
+    parsedAdmin = []
+  }
+
+  return { employees: parsedEmployees, admin: parsedAdmin }
+}
+
+export const setCurrentUser = (user) => {
+  if (typeof window === 'undefined' || !window.localStorage) return
+  localStorage.setItem('currentUser', JSON.stringify(user))
+}
+
+export const getCurrentUser = () => {
+  if (typeof window === 'undefined' || !window.localStorage) return null
+
+  try {
+    return JSON.parse(localStorage.getItem('currentUser'))
+  } catch (error) {
+    return null
+  }
+}
+
+export const clearCurrentUser = () => {
+  if (typeof window === 'undefined' || !window.localStorage) return
+  localStorage.removeItem('currentUser')
 }

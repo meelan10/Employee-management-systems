@@ -3,10 +3,10 @@ import Header from '../others/Header'
 import AllTask from '../others/AllTask'
 import CreateTask from '../others/CreateTask'
 
-const AdminDashboard = () => {
+const AdminDashboard = ({ user, onLogout }) => {
   return (
     <div className='min-h-screen w-full bg-slate-950 text-slate-100 p-8'>
-      <Header />
+      <Header userName={user?.email || 'Admin'} onLogout={onLogout} />
 
       <section className='mt-8 grid gap-6 xl:grid-cols-[1.7fr_1fr]'>
         <div className='space-y-6'>
